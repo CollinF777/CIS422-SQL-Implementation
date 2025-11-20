@@ -33,17 +33,25 @@ CREATE TABLE SupplementLog (
 
 CREATE TABLE ExerciseLog (
     LogID INT AUTO_INCREMENT PRIMARY KEY,
+    ExerciseID INT, --  ADDED FIELD
+    Date DATE, --  ADDED FIELD
+    UserID INT, --  ADDED FIELD
     NumOfSetsDone INT,
     NumOfRepsDone INT,
     Length INT,
-    Weight INT
+    Weight INT,
+    FOREIGN KEY (ExerciseID) REFERENCES Exercise(ExerciseID), --  ADDED FIELD
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)   --  ADDED FIELD
 );
 
 CREATE TABLE NutritionLog (
     NutritionDayId INT AUTO_INCREMENT PRIMARY KEY,
+    Date DATE, --  ADDED FIELD
+    UserID INT, --  ADDED FIELD
     NumOfCal INT,
     NumOfCarbs INT,
-    NumOfProtein INT
+    NumOfProtein INT,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 CREATE TABLE SleepLog (
