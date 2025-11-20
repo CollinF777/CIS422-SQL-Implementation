@@ -15,11 +15,11 @@ INSERT INTO Exercise (ExerciseName, ExerciseType) VALUES
 ('Plank', 'Core/Endurance'),                
 ('Treadmill Running', 'Cardio');
 
-INSERT INTO WorkoutPlan (NumOfExercises, WorkoutName, TargetMuscleGroup, DaysOfWeek, ExerciseID) VALUES
-(5, 'Upper Body Push', 'Chest, Shoulders, Triceps', 'Mo', 1), -- Bench Press (ExerciseID 1)
-(4, 'Lower Body', 'Quads, Glutes, Hamstrings', 'We', 2), -- Dumbbell Squat (ExerciseID 2)
-(3, 'Cardio and Core', 'Cardiovascular System, Abs', 'Fr', 6), -- Treadmill Running (ExerciseID 6)
-(5, 'Upper Body Pull', 'Back, Biceps', 'Tu', 3); -- Pull Up (ExerciseID 3)
+INSERT INTO WorkoutPlan (NumOfExercises, WorkoutName, TargetMuscleGroup, DaysOfWeek, ExerciseID, UserID) VALUES
+(5, 'Upper Body Push', 'Chest, Shoulders, Triceps', 'Mo', 1, 1), -- Bench Press (ExerciseID 1) Collin Fair
+(4, 'Lower Body', 'Quads, Glutes, Hamstrings', 'We', 2, 2), -- Dumbbell Squat (ExerciseID 2) Adita Kulkarni
+(3, 'Cardio and Core', 'Cardiovascular System, Abs', 'Fr', 6, 5), -- Treadmill Running (ExerciseID 6) Hames Joman
+(5, 'Upper Body Pull', 'Back, Biceps', 'Tu', 3, 5); -- Pull Up (ExerciseID 3) Hames Joman
 
 
 INSERT INTO SupplementLog (WorkoutID, ProteinTotalG, CreatineTotalG, PreworkoutTotalG) VALUES
