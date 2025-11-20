@@ -1,0 +1,1 @@
+DROP VIEW user_info_view;
