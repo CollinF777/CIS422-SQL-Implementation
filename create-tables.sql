@@ -20,7 +20,7 @@ CREATE TABLE WorkoutPlan (
     TargetMuscleGroup VARCHAR(100),
     DaysOfWeek CHAR(2),
     ExerciseID INT,
-    FOREIGN KEY (ExerciseID) REFERENCES Exercise(ExerciseID)
+    FOREIGN KEY (ExerciseID) REFERENCES Exercise(ExerciseID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID) --  ADDED FIELD
 );
 
