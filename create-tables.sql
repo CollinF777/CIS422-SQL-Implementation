@@ -56,7 +56,9 @@ CREATE TABLE NutritionLog (
 
 CREATE TABLE SleepLog (
     SleepDayID INT AUTO_INCREMENT PRIMARY KEY,
-    SleepTime INT
+    SleepTime INT,
+    UserID INT,  --  ADDED FIELD
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)  --  ADDED FIELD
 );
 
 CREATE TABLE Goal (
@@ -64,6 +66,8 @@ CREATE TABLE Goal (
     WeightGoal INT,
     CalorieGoal INT,
     ExerciseFrequency INT,
-    SleepGoal INT
+    SleepGoal INT,
+    UserID INT, --  ADDED FIELD
+    FOREIGN KEY (UserID) REFERENCES Users(UserID) --  ADDED FIELD
 );
 
