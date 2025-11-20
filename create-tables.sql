@@ -21,6 +21,7 @@ CREATE TABLE WorkoutPlan (
     DaysOfWeek CHAR(2),
     ExerciseID INT,
     FOREIGN KEY (ExerciseID) REFERENCES Exercise(ExerciseID)
+    FOREIGN KEY (UserID) REFERENCES Users(UserID) --  ADDED FIELD
 );
 
 CREATE TABLE SupplementLog (
