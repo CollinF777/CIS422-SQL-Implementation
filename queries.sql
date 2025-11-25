@@ -21,3 +21,9 @@ VALUES ("2025-10-31", 2000, 300, 500, 3);
 
 INSERT INTO SleepLog (SleepTime, UserID)
 VALUES (10, 3);
+
+select * from sleep_summary_view where sleep_summary_view.Name = "Liam Callahan";
+
+select * from user_info_view where user_info_view.Name = "Liam Callahan";
+
+select * from goal_progress_view where Name = "Liam Callahan";
