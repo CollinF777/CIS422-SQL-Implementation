@@ -1,6 +1,34 @@
 -- trigger on user creation
--- trigger on user deletion
+DELIMITER $$
 
+CREATE TRIGGER log_user_create
+AFTER INSERT ON Users
+FOR EACH ROW
+BEGIN
+    INSERT INTO UserAuditLog (
+        UserID, ActionType, Name, Age, Weight, BodyFatPercentage, Gender
+    ) VALUES (
+        NEW.UserID, 'CREATE', NEW.Name, NEW.Age, NEW.Weight, NEW.bodyFatPercentage, NEW.Gender
+    );
+END$$
+
+DELIMITER ;
+
+-- trigger on user deletion
+DELIMITER $$
+
+CREATE TRIGGER log_user_delete
+AFTER DELETE ON Users
+FOR EACH ROW
+BEGIN
+    INSERT INTO UserAuditLog (
+        UserID, ActionType, Name, Age, Weight, BodyFatPercentage, Gender
+    ) VALUES (
+        OLD.UserID, 'DELETE', OLD.Name, OLD.Age, OLD.Weight, OLD.bodyFatPercentage, OLD.Gender
+    );
+END$$
+
+DELIMITER ;
 
 -- Prevent invalid Days Of Week
 DELIMITER $$

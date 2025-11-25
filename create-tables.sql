@@ -73,3 +73,15 @@ CREATE TABLE Goal (
     FOREIGN KEY (UserID) REFERENCES Users(UserID) --  ADDED FIELD
 );
 
+CREATE TABLE UserAuditLog (
+    AuditID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID INT,
+    ActionType ENUM('CREATE', 'DELETE'),
+    ActionTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Name VARCHAR(100),
+    Age INT,
+    Weight INT,
+    BodyFatPercentage DECIMAL(5,2),
+    Gender CHAR(1)
+);
+
